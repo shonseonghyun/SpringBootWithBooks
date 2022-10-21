@@ -6,7 +6,7 @@ buildscript {
 
 	repositories {
 		mavenCentral()
-//		jcenter()
+//		jcenter() 주석
 	}
 
 	dependencies {
