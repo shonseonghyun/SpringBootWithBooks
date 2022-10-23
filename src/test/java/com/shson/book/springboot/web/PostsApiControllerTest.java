@@ -4,6 +4,7 @@ import com.shson.book.springboot.domain.posts.Posts;
 import com.shson.book.springboot.domain.posts.PostsRepository;
 import com.shson.book.springboot.service.posts.PostsService;
 import com.shson.book.springboot.web.dto.PostsSaveRequestDTO;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,11 @@ class PostsApiControllerTest {
         PostsService, PostsAipController 검증
     */
 
+    @AfterEach
+    public void 삭제(){
+        postsRepository.deleteAll();
+    }
+
     @Test
     public void Posts_등록테스트(){
 
@@ -55,6 +61,7 @@ class PostsApiControllerTest {
                 .content(content)
                 .author(author)
                 .build();
+
 
         //when
         ResponseEntity<Long> responseEntity  = restTemplate.postForEntity(url ,requestDTO.toEntity(), Long.class);
