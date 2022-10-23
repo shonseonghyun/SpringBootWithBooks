@@ -32,18 +32,27 @@ version = '0.0.1-SNAPSHOT'
 
 repositories {
 	mavenCentral()
+	maven {
+		url 'https://repo.clojars.org'
+		name 'Clojars'
+	}
 }
 
 dependencies {
 	/*
 	 - compileOnly : 컴파일 시에만 빌드하고 빌드 결과물엔 포함X
 	 - implementation : 내부적으로만 사용되고 사용자에게는 의존성을 노출시키지 않게 선언한다. 다만 런타임에만 노출
-					   의존 라이브러리를 수정해도 본모듈까지만 재빌드
+					   의존 라이브러리를 수정해도 본모듈까지만 재빌
+	 - api :
 	*/
+
+
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 
 	//@Runwith 없어서 라이브러리 추가
 	implementation 'junit:junit:4.13.2'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.7.4'
+	implementation 'com.h2database:h2:2.1.214'
 
 
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
@@ -60,6 +69,8 @@ dependencies {
 
 
 }
+
+
 
 
 tasks.named('test') {
