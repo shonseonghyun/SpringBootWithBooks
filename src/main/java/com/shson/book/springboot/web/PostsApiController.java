@@ -16,6 +16,7 @@ public class PostsApiController {
     //글 작성
     @PostMapping("/api/v1/posts")
     public Long save(@RequestBody PostsSaveRequestDTO requestDTO){
+
         return postsService.save(requestDTO);
     }
 
@@ -26,8 +27,14 @@ public class PostsApiController {
     }
 
     //조회
-    @GetMapping("/api/vi/posts/{id}")
+    @GetMapping("/api/v1/posts/{id}")
     public PostsResponseDTO findByid(@PathVariable("id") Long id){
         return postsService.findById(id);
+    }
+
+    //삭제
+    @DeleteMapping("/api/v1/posts/{id}")
+    public Long delete(@PathVariable("id") Long id){
+        return postsService.delete(id);
     }
 }
