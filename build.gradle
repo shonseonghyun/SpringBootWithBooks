@@ -67,6 +67,11 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 
+	/* mustache 사용을 위한 의존성 추가
+	  2.7.4 경우 한글 깨지기에 2.6.7로 변경 후 application.properties 설정 추가
+	* */
+	implementation 'org.springframework.boot:spring-boot-starter-mustache:2.6.7'
+
 
 }
 
