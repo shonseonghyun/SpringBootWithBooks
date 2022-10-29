@@ -4,7 +4,6 @@ package com.shson.book.springboot.web.dto;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 
 class HelloResponseDtoTest {
@@ -14,7 +13,7 @@ class HelloResponseDtoTest {
         String name = "test";
         int amount =1000;
 
-        HelloResponseDto dto = new HelloResponseDto(name,amount);
+        HelloResponseDTO dto = new HelloResponseDTO(name,amount);
 
 
 
