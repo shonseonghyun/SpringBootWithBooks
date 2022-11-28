@@ -5,18 +5,21 @@ import com.shson.book.springboot.web.dto.PostsResponseDTO;
 import com.shson.book.springboot.web.dto.PostsSaveRequestDTO;
 import com.shson.book.springboot.web.dto.PostsUpdateRequestDTO;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
 public class PostsApiController {
+    private final Logger logger= LoggerFactory.getLogger(PostsApiController.class);
 
     private final PostsService postsService;
 
     //글 작성
     @PostMapping("/api/v1/posts")
     public Long save(@RequestBody PostsSaveRequestDTO requestDTO){
-
+        logger.info("ss");
         return postsService.save(requestDTO);
     }
 
